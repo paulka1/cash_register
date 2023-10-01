@@ -1,0 +1,28 @@
+.crp-main {
+  display: flex;
+  .crp-main-left {
+    width: 80%;
+    .crp-select-div {
+      background-color: blue;
+      height: 80vh;
+    }
+    .crp-tab-div {
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+
+      .crp-tab {
+        width: 33%;
+        height: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .crp-cart-div {
+    background-color: red;
+    width: 20%;
+    height: 100vh;
+  }
+}
+
