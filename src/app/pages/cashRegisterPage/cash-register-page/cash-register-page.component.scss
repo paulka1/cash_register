@@ -2,9 +2,16 @@
   display: flex;
   .crp-main-left {
     width: 80%;
-    .crp-select-div {
-      background-color: blue;
+    .crp-menu-div {
       height: 80vh;
+
+      .crp-menu-item {
+        background-color: grey;
+        width: 25%;
+        height: 150px;
+        border-radius: 7px;
+        margin: 2px;
+      }
     }
     .crp-tab-div {
       height: 20vh;

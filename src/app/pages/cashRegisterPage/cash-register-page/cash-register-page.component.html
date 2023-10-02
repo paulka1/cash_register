@@ -1,9 +1,13 @@
 <div class="crp-main">
   <div class="crp-main-left">
-    <div class="crp-select-div">
-      <div *ngIf="currentItemCategory === itemCategoryEnum.BOISSONS">
-        <div *ngFor="let drink of menuDrink.products">
-          {{drink.name}}
+    <div class="crp-menu-div">
+      <div class="container" *ngIf="currentItemCategory === itemCategoryEnum.BOISSONS">
+        <div class="row">
+        <div class="col-12 crp-menu-item" *ngFor="let drink of menuDrink?.products">
+          <div>
+            {{drink.name}}
+          </div>
+        </div>
         </div>
       </div>
       <div *ngIf="currentItemCategory === itemCategoryEnum.SNACK">
@@ -12,9 +16,9 @@
       <div *ngIf="currentItemCategory === itemCategoryEnum.SANDWICH">
         <span>SANDWICH</span>
       </div>
-<!--      <div *ngFor="let item of menuInfos; index as i;">-->
+      <!--      <div *ngFor="let item of menuInfos; index as i;">-->
 
-<!--      </div>-->
+      <!--      </div>-->
     </div>
     <div class="crp-tab-div">
       <button
