@@ -9,11 +9,13 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatIconModule } from "@angular/material/icon";
 import { CommonModule } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CashRegisterPageComponent
+    CashRegisterPageComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

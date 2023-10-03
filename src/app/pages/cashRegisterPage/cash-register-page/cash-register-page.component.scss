@@ -4,13 +4,22 @@
     width: 80%;
     .crp-menu-div {
       height: 80vh;
+      padding: 5px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+
 
       .crp-menu-item {
-        background-color: grey;
-        width: 25%;
+        width: 200px;
         height: 150px;
-        border-radius: 7px;
+        border-radius: 8px;
         margin: 2px;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .crp-menu-item:hover {
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
       }
     }
     .crp-tab-div {
@@ -22,6 +31,8 @@
         width: 33%;
         height: 100%;
         cursor: pointer;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 3px;
       }
     }
   }

@@ -1,20 +1,37 @@
 <div class="crp-main">
   <div class="crp-main-left">
     <div class="crp-menu-div">
-      <div class="container" *ngIf="currentItemCategory === itemCategoryEnum.BOISSONS">
+      <div class="container text-center" *ngIf="currentItemCategory === itemCategoryEnum.BOISSONS">
         <div class="row">
-        <div class="col-12 crp-menu-item" *ngFor="let drink of menuDrink?.products">
-          <div>
-            {{drink.name}}
+        <div class="col-6 crp-menu-item" *ngFor="let drink of menuDrink?.products">
+          <app-product
+          [product]="drink"
+          [productType]="itemCategoryEnum.BOISSONS"
+          ></app-product>
+        </div>
+        </div>
+      </div>
+
+      <div class="container text-center" *ngIf="currentItemCategory === itemCategoryEnum.SNACKS">
+        <div class="row">
+          <div class="col-6 crp-menu-item" *ngFor="let snack of menuSnack?.products">
+            <app-product
+              [product]="snack"
+              [productType]="itemCategoryEnum.SNACKS"
+            ></app-product>
           </div>
         </div>
+      </div>
+
+      <div class="container text-center" *ngIf="currentItemCategory === itemCategoryEnum.SANDWICH">
+        <div class="row">
+          <div class="col-6 crp-menu-item" *ngFor="let food of menuFood?.products">
+            <app-product
+              [product]="food"
+              [productType]="itemCategoryEnum.SANDWICH"
+            ></app-product>
+          </div>
         </div>
-      </div>
-      <div *ngIf="currentItemCategory === itemCategoryEnum.SNACK">
-        <span>SNACK</span>
-      </div>
-      <div *ngIf="currentItemCategory === itemCategoryEnum.SANDWICH">
-        <span>SANDWICH</span>
       </div>
       <!--      <div *ngFor="let item of menuInfos; index as i;">-->
 
@@ -30,8 +47,8 @@
       <button
         mat-button
         class="crp-tab"
-        (click)="selectCategory(itemCategoryEnum.SNACK)">
-        {{itemCategoryEnum.SNACK}}
+        (click)="selectCategory(itemCategoryEnum.SNACKS)">
+        {{itemCategoryEnum.SNACKS}}
       </button>
       <button
         mat-button
