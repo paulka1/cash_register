@@ -1,0 +1,26 @@
+.cart {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.cart-card {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.cart-card-button {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}

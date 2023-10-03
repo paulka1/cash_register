@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from "../../../services/menu/menu.service";
 import { CategoryI, MenuI } from "../../../../common/interface";
 import { itemCategoryEnum } from "../../../../common/enums";
+import { Subject } from 'rxjs'
 
 @Component({
   selector: 'app-cash-register-page',
@@ -35,9 +36,6 @@ export class CashRegisterPageComponent implements OnInit{
     this.menuSnack = this.menuInfos?.categories.find(category => {
       return category.name === itemCategoryEnum.SNACKS;
     });
-
-    console.log('this.menuDrink : ', this.menuDrink)
-    console.log(this.menuInfos);
   }
 
   selectCategory(category: itemCategoryEnum) {

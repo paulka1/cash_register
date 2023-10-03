@@ -1,0 +1,26 @@
+<div class="cart text-center">
+  <h3>Panier</h3>
+
+  <div *ngFor="let product of productList">
+    <div class="cart-card">
+      {{product.quantity}}{{product.product.name}}{{product.product.price * product.quantity + 'E'}}
+      <span>
+        <button
+          class="cart-card-button mat-elevation-z0"
+          mat-icon-button
+          color="basic">
+          -
+        </button>
+        <button
+          class="cart-card-button mat-elevation-z0"
+          mat-icon-button
+          color="basic">
+          +
+        </button>
+        <button mat-fab color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>

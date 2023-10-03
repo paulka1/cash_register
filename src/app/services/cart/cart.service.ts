@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import Menu from '../../../assets/menu.json';
 import { Subject } from 'rxjs'
+import { ProductI } from '../../../common/interface'
 
 @Injectable({
   providedIn: 'root'
 })
-export class MenuService {
-  getMenuInfos() {
-    return Menu;
-  }
+export class CartService {
+
+  cart = new Subject<ProductI>();
+
 }

@@ -1,12 +1,13 @@
-<div class="product-item">
+<div *ngIf="_product" class="product-item">
   <div>
-    {{_product?.name}}
+    {{_product.name}}
   </div>
-  <img class="crp-menu-item-icon" [src]=_productIcon alt="icon">
+  <img class="crp-menu-item-icon" [src]=_product.image alt="icon">
   <button
     mat-button
     color="primary"
     class="crp-tab"
+    (click)="addToCart(_product)"
   >
     Ajouter
   </button>

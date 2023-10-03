@@ -33,32 +33,32 @@
           </div>
         </div>
       </div>
-      <!--      <div *ngFor="let item of menuInfos; index as i;">-->
-
-      <!--      </div>-->
     </div>
     <div class="crp-tab-div">
       <button
         mat-button
         class="crp-tab"
         (click)="selectCategory(itemCategoryEnum.BOISSONS)">
+        <img class="crp-tab-icon" src="/assets/img/soda.png" alt="icon"/>
         {{itemCategoryEnum.BOISSONS}}
       </button>
       <button
         mat-button
         class="crp-tab"
         (click)="selectCategory(itemCategoryEnum.SNACKS)">
+        <img class="crp-tab-icon" src="/assets/img/snack.png" alt="icon"/>
         {{itemCategoryEnum.SNACKS}}
       </button>
       <button
         mat-button
         class="crp-tab"
         (click)="selectCategory(itemCategoryEnum.SANDWICH)">
+        <img class="crp-tab-icon" src="/assets/img/sandwich.png" alt="icon"/>
         {{itemCategoryEnum.SANDWICH}}
       </button>
     </div>
   </div>
   <div class="crp-cart-div">
-
+    <app-cart></app-cart>
   </div>
 </div>

@@ -14,3 +14,8 @@ export interface CategoryI {
 export interface MenuI {
   categories: CategoryI[];
 }
+
+export interface CartItem {
+  product: ProductI;
+  quantity: number;
+}
