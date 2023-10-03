@@ -3,8 +3,23 @@
   padding: 10px;
   border-radius: 8px;
 
+  .cart-card-button-trash-div {
+    text-align: end;
+    margin: 2px;
+
+    .cart-card-button-trash {
+      width: 25px;
+      cursor: pointer;
+    }
+  }
+
   .cart-card-title {
-    font-size: 20px;
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+
+  .cart-card-img {
+    width: 45px;
   }
 
   .cart-card-button-div {

@@ -38,6 +38,7 @@
       <button
         mat-button
         class="crp-tab"
+        [class.selected]="currentItemCategory === itemCategoryEnum.BOISSONS"
         (click)="selectCategory(itemCategoryEnum.BOISSONS)">
         <img class="crp-tab-icon" src="/assets/img/soda.png" alt="icon"/>
         {{itemCategoryEnum.BOISSONS}}
@@ -45,6 +46,7 @@
       <button
         mat-button
         class="crp-tab"
+        [class.selected]="currentItemCategory === itemCategoryEnum.SNACKS"
         (click)="selectCategory(itemCategoryEnum.SNACKS)">
         <img class="crp-tab-icon" src="/assets/img/snack.png" alt="icon"/>
         {{itemCategoryEnum.SNACKS}}
@@ -52,6 +54,7 @@
       <button
         mat-button
         class="crp-tab"
+        [class.selected]="currentItemCategory === itemCategoryEnum.SANDWICH"
         (click)="selectCategory(itemCategoryEnum.SANDWICH)">
         <img class="crp-tab-icon" src="/assets/img/sandwich.png" alt="icon"/>
         {{itemCategoryEnum.SANDWICH}}

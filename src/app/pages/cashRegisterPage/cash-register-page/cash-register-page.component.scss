@@ -6,7 +6,7 @@
     .crp-menu-div {
       height: 80vh;
       padding: 5px;
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
       background-color: rgba(123, 161, 255, 0.3);
 
       .crp-menu-item {
@@ -16,7 +16,7 @@
         margin: 2px;
         cursor: pointer;
         transition: box-shadow 0.2s;
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         background-color: white;
       }
 
@@ -39,6 +39,11 @@
         .crp-tab-icon {
           width: 50px;
         }
+      }
+
+      .crp-tab.selected {
+        background-color: rgba(123, 161, 255, 0.3);
+        color: white;
       }
     }
   }

@@ -1,7 +1,19 @@
 <div *ngIf="_product" class="cart-card">
+  <div class="cart-card-button-trash-div">
+    <img
+      class="cart-card-button-trash"
+      src="assets/img/trash.png"
+      (click)="removeFromCart(_product.product)"
+      alt="trash icon"
+    />
+  </div>
   <p class="cart-card-title">
     {{_product.product.name}}
   </p>
+  <img
+    [src]="_product.product.image"
+    alt="product icon"
+    class="cart-card-img">
   <span class="cart-card-button-div">
     <button
       class="cart-card-button mat-elevation-z0"
@@ -19,13 +31,5 @@
       +
     </button>
   </span>
-  <button
-    mat-fab
-    class="cart-card-button mat-elevation-z0"
-    color="warn"
-    (click)="removeFromCart(_product.product)"
-  >
-    <mat-icon>delete</mat-icon>
-  </button>
 </div>
 
