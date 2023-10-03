@@ -13,11 +13,25 @@ export class CartComponent implements OnInit{
   }
 
   productList: CartItem[] = [];
+  total: number = 0;
 
   ngOnInit() {
     this.cartService.cart.subscribe({
-      next:(product) => {
-        this.addToCart(product)
+      next:(data: { product: ProductI, buttonAction: any }) => {
+
+        if (data.buttonAction === 'ADD') {
+          this.addToCart(data.product)
+        } else if (data.buttonAction === 'REMOVE_ONE') {
+          const indexToRemove = this.productList.findIndex(item => item.product.id === data.product.id);
+          if (indexToRemove !== -1) {
+            this.removeOneFromCart(indexToRemove);
+          }
+        } else {
+          const indexToRemove = this.productList.findIndex(item => item.product.id === data.product.id);
+          if (indexToRemove !== -1) {
+            this.removeFromCart(indexToRemove);
+          }
+        }
       }
     })
   }
@@ -30,10 +44,10 @@ export class CartComponent implements OnInit{
     } else {
       this.productList.push({ product, quantity: 1 });
     }
-    console.log('acrt: ', this.productList)
+    this.updateTotalCost();
   }
 
-  removeFromCart(index: number) {
+  removeOneFromCart(index: number) {
     if (index >= 0 && index < this.productList.length) {
 
       if (this.productList[index].quantity > 1) {
@@ -41,6 +55,23 @@ export class CartComponent implements OnInit{
       } else {
         this.productList.splice(index, 1);
       }
+      this.updateTotalCost();
     }
+  }
+
+  removeFromCart(index: number) {
+    if (index >= 0 && index < this.productList.length) {
+
+      if (this.productList[index].quantity >= 1) {
+        this.productList.splice(index, 1);
+      }
+      this.updateTotalCost();
+    }
+  }
+
+  private updateTotalCost() {
+    this.total = this.productList.reduce((acc, item) => {
+      return acc + (item.product.price * item.quantity);
+    }, 0);
   }
 }

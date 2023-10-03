@@ -11,13 +11,15 @@ import { CommonModule } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
 import { ProductComponent } from './components/product/product.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CartCardComponent } from './components/cart-card/cart-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CashRegisterPageComponent,
     ProductComponent,
-    CartComponent
+    CartComponent,
+    CartCardComponent
   ],
   imports: [
     BrowserModule,

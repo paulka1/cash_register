@@ -1,0 +1,31 @@
+<div *ngIf="_product" class="cart-card">
+  <p class="cart-card-title">
+    {{_product.product.name}}
+  </p>
+  <span class="cart-card-button-div">
+    <button
+      class="cart-card-button mat-elevation-z0"
+      mat-icon-button
+      (click)="removeOneFromCart(_product.product)"
+      color="basic">
+      -
+    </button>
+    {{_product.quantity}}
+    <button
+      class="cart-card-button mat-elevation-z0"
+      mat-icon-button
+      (click)="addToCart(_product.product)"
+      color="basic">
+      +
+    </button>
+  </span>
+  <button
+    mat-fab
+    class="cart-card-button mat-elevation-z0"
+    color="warn"
+    (click)="removeFromCart(_product.product)"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
+

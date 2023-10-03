@@ -19,3 +19,8 @@ export interface CartItem {
   product: ProductI;
   quantity: number;
 }
+
+export interface CartSubject {
+  product: ProductI;
+  buttonAction: string;
+}

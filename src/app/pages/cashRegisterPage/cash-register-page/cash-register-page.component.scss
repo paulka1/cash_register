@@ -2,11 +2,12 @@
   display: flex;
   .crp-main-left {
     width: 80%;
+
     .crp-menu-div {
       height: 80vh;
       padding: 5px;
       box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-
+      background-color: rgba(123, 161, 255, 0.3);
 
       .crp-menu-item {
         width: 200px;
@@ -16,6 +17,7 @@
         cursor: pointer;
         transition: box-shadow 0.2s;
         box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+        background-color: white;
       }
 
       .crp-menu-item:hover {

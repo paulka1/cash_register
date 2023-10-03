@@ -1,0 +1,28 @@
+.cart-card {
+  height: 100%;
+  padding: 10px;
+  border-radius: 8px;
+
+  .cart-card-title {
+    font-size: 20px;
+  }
+
+  .cart-card-button-div {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+
+    .cart-card-button {
+      width: 25px;
+      height: 25px;
+      background-color: red;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+}
+

@@ -29,6 +29,6 @@ export class ProductComponent {
   _productType: itemCategoryEnum | undefined;
 
   addToCart(product: ProductI) {
-    this.cartService.cart.next(product)
+    this.cartService.cart.next({product: product, buttonAction: 'ADD'})
   }
 }

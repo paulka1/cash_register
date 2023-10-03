@@ -1,26 +1,21 @@
 <div class="cart text-center">
-  <h3>Panier</h3>
+  <div class="cart-item">
+    <p class="cart-title">Panier</p>
 
-  <div *ngFor="let product of productList">
-    <div class="cart-card">
-      {{product.quantity}}{{product.product.name}}{{product.product.price * product.quantity + 'E'}}
-      <span>
-        <button
-          class="cart-card-button mat-elevation-z0"
-          mat-icon-button
-          color="basic">
-          -
-        </button>
-        <button
-          class="cart-card-button mat-elevation-z0"
-          mat-icon-button
-          color="basic">
-          +
-        </button>
-        <button mat-fab color="warn">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </span>
+    <div *ngFor="let product of productList">
+      <div class="cart-card-div">
+        <app-cart-card
+          [product] = "product"
+        ></app-cart-card>
+      </div>
     </div>
+  </div>
+  <div class="cart-pay">
+    <div>
+      {{total}} €
+    </div>
+    <button mat-flat-button color="primary">
+      PAYER
+    </button>
   </div>
 </div>
