@@ -24,3 +24,9 @@ export interface CartSubject {
   product: ProductI;
   buttonAction: string;
 }
+
+export interface MatDialogI {
+  body: string;
+  title: string;
+  productList: CartItem[]
+}

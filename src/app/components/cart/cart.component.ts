@@ -3,6 +3,7 @@ import { CartService } from '../../services/cart/cart.service'
 import { CartItem, ProductI } from '../../../common/interface'
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component'
+import { buttonActionEnum } from '../../../common/enums'
 
 @Component({
   selector: 'app-cart',
@@ -22,11 +23,11 @@ export class CartComponent implements OnInit{
 
   ngOnInit() {
     this.cartService.cart.subscribe({
-      next:(data: { product: ProductI, buttonAction: any }) => {
+      next:(data: { product: ProductI, buttonAction: string }) => {
 
-        if (data.buttonAction === 'ADD') {
+        if (data.buttonAction === buttonActionEnum.ADD) {
           this.addToCart(data.product)
-        } else if (data.buttonAction === 'REMOVE_ONE') {
+        } else if (data.buttonAction === buttonActionEnum.REMOVE_ONE) {
           const indexToRemove = this.productList.findIndex(item => item.product.id === data.product.id);
           if (indexToRemove !== -1) {
             this.removeOneFromCart(indexToRemove);
@@ -49,7 +50,7 @@ export class CartComponent implements OnInit{
     } else {
       this.productList.push({ product, quantity: 1 });
     }
-    this.updateTotalCost();
+    this.total = this.cartService.updateTotalCost(this.productList)
   }
 
   removeOneFromCart(index: number) {
@@ -60,7 +61,7 @@ export class CartComponent implements OnInit{
       } else {
         this.productList.splice(index, 1);
       }
-      this.updateTotalCost();
+      this.total = this.cartService.updateTotalCost(this.productList)
     }
   }
 
@@ -70,21 +71,16 @@ export class CartComponent implements OnInit{
       if (this.productList[index].quantity >= 1) {
         this.productList.splice(index, 1);
       }
-      this.updateTotalCost();
+      this.total = this.cartService.updateTotalCost(this.productList)
     }
-  }
-
-  private updateTotalCost() {
-    this.total = this.productList.reduce((acc, item) => {
-      return acc + (item.product.price * item.quantity);
-    }, 0);
   }
 
   pay() {
     this.dialog.open(DialogComponent, {
       data: {
         body: 'Votre commande a bien été pris en compte !',
-        title: 'Félicitation !'
+        title: 'Félicitation !',
+        productList: this.productList
       }
     })
 

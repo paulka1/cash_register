@@ -1,0 +1,22 @@
+.dialog-ticket {
+  width: 300px;
+  padding: 30px;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+
+  .item {
+    margin-bottom: 5px;
+  }
+
+  .item-name {
+    display: inline-block;
+    width: 60%;
+  }
+
+  .total {
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+}

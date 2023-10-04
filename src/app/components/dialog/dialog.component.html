@@ -2,8 +2,21 @@
   <h1 mat-dialog-title>{{data.title}}</h1>
   <div mat-dialog-content>
     <p>{{data.body}}</p>
+    <div class="dialog-ticket">
+      <div *ngFor="let item of data.productList">
+        <div class="item">
+          <span class="item-name">x{{item.quantity}} {{item.product.name}}</span>
+        </div>
+      </div>
+      <div class="total">Total : {{total}} €</div>
+    </div>
   </div>
   <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Ok</button>
+    <button
+      mat-button
+      (click)="onNoClick()"
+      color="primary">
+      Ok
+    </button>
   </div>
 </div>
