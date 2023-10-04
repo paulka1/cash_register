@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart/cart.service'
 import { CartItem, ProductI } from '../../../common/interface'
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component'
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +11,10 @@ import { CartItem, ProductI } from '../../../common/interface'
 })
 export class CartComponent implements OnInit{
 
-  constructor(private cartService: CartService) {
+  constructor(
+    private cartService: CartService,
+    protected dialog: MatDialog
+  ) {
   }
 
   productList: CartItem[] = [];
@@ -73,5 +78,17 @@ export class CartComponent implements OnInit{
     this.total = this.productList.reduce((acc, item) => {
       return acc + (item.product.price * item.quantity);
     }, 0);
+  }
+
+  pay() {
+    this.dialog.open(DialogComponent, {
+      data: {
+        body: 'Votre commande a bien été pris en compte !',
+        title: 'Félicitation !'
+      }
+    })
+
+    this.productList = [];
+    this.total = 0;
   }
 }

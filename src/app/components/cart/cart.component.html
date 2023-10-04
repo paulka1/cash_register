@@ -14,7 +14,11 @@
     <div>
       {{total}} €
     </div>
-    <button mat-flat-button color="primary">
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="pay()"
+      [disabled]="productList.length === 0">
       PAYER
     </button>
   </div>

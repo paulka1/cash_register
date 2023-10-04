@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProductI } from '../../../common/interface'
-import { itemCategoryEnum } from '../../../common/enums'
+import { buttonActionEnum, itemCategoryEnum } from '../../../common/enums'
 import { ITEM_CATEGORY } from '../../../common/constants'
 import { CartService } from '../../services/cart/cart.service'
 
@@ -29,6 +29,6 @@ export class ProductComponent {
   _productType: itemCategoryEnum | undefined;
 
   addToCart(product: ProductI) {
-    this.cartService.cart.next({product: product, buttonAction: 'ADD'})
+    this.cartService.cart.next({product: product, buttonAction: buttonActionEnum.ADD})
   }
 }

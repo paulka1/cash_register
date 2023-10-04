@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from "../../../services/menu/menu.service";
-import { CategoryI, MenuI } from "../../../../common/interface";
-import { itemCategoryEnum } from "../../../../common/enums";
-import { Subject } from 'rxjs'
+import { MenuService } from "../../services/menu/menu.service";
+import { CategoryI, MenuI } from "../../../common/interface";
+import { itemCategoryEnum } from "../../../common/enums";
 
 @Component({
   selector: 'app-cash-register-page',

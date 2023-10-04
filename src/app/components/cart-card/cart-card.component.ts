@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CartItem, ProductI } from '../../../common/interface'
 import { CartService } from '../../services/cart/cart.service'
+import { buttonActionEnum } from '../../../common/enums'
 
 @Component({
   selector: 'app-cart-card',
@@ -18,14 +19,14 @@ export class CartCardComponent {
   _product: CartItem | undefined;
 
   addToCart(product: ProductI) {
-    this.cartService.cart.next({product: product, buttonAction: 'ADD'})
+    this.cartService.cart.next({product: product, buttonAction: buttonActionEnum.ADD})
   }
 
   removeOneFromCart(product: ProductI) {
-    this.cartService.cart.next({product: product, buttonAction: 'REMOVE_ONE'})
+    this.cartService.cart.next({product: product, buttonAction: buttonActionEnum.REMOVE_ONE})
   }
 
   removeFromCart(product: ProductI) {
-    this.cartService.cart.next({product: product, buttonAction: 'REMOVE'})
+    this.cartService.cart.next({product: product, buttonAction: buttonActionEnum.REMOVE})
   }
 }
